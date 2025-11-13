@@ -258,7 +258,7 @@ class Manager:
                 # Read customer data and create customers
                 for _ in range(nCustomers):
                     line = fileReader.readline().strip()
-                    customerId, x, y, service_time, ready_time, due_time, demand = int(line.split()[0]), float(line.split()[1]), float(line.split()[2]), int(line.split()[4]), int(line.split()[11])/36, int(line.split()[12])/36,int(line.split()[4])
+                    customerId, x, y, service_time, ready_time, due_time, demand = int(line.split()[0]), float(line.split()[1]), float(line.split()[2]), int(line.split()[4]), int(line.split()[11]), int(line.split()[12]),int(line.split()[4])
     
                     customer = Customer(customerId, x, y, demand, service_time, ready_time, due_time)
                     self.customers.append(customer)
@@ -2722,4 +2722,5 @@ plot_solution(solutionDepots,bestIndividual)
 
 # Calculate the execution time
 execution_time = end_time - start_time
+
 print(f"Execution time: {execution_time} seconds")
